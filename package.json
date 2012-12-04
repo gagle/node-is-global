@@ -1,0 +1,22 @@
+{
+	"name": "is-global",
+	"version": "0.0.1",
+	"description": "Checks whether Node.js is running a global module.",
+	"keywords": ["global", "module"],
+	"author": {
+		"name": "Gabriel Llamas",
+		"email": "gaglekas@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Gagle/Node-IsGlobal.git"
+	},
+	"engines": {
+		"node": "*"
+	},
+	"licenses": [{
+		"type": "MIT",
+		"url": "http://www.opensource.org/licenses/mit-license.html"
+	}],
+	"main": "is-global"
+}
