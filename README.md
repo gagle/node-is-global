@@ -15,7 +15,7 @@ On Windows there are two ways:
 
 * __Synchronous__
 
-	The `PATH` environment variable is used. Node.js scripts running inside `<npm_install_dir>/node_modules` will return always true, e.g.:
+	The `PATH` environment variable is used. Node.js scripts running inside `<npm_install_dir>/node_modules` will always return true, e.g.:
 
 	```
 	npm_install_dir = C:\Users\<user>\AppData\Roaming\npm
