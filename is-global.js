@@ -85,7 +85,7 @@ var isGlobalAsync = function (cb){
 		if (!path) return ret (false);
 		
 		var file = path + PATH.sep + "package.json";
-		FS.exists (file, function (exists){
+		FS.exists (prefix + file, function (exists){
 			if (exists){
 				check (file);
 			}else{
@@ -94,7 +94,11 @@ var isGlobalAsync = function (cb){
 		});
 	};
 	
-	search (getParent (process.mainModule.paths[0]));
+	var p = process.mainModule.paths[0];
+	var index = p.indexOf (":") + 1;
+	var prefix = p.substring (0, index);
+	
+	search (getParent (p.substring (index)));
 };
 
 module.exports = function (cb){
