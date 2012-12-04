@@ -22,11 +22,11 @@ On Windows there are two ways:
 	node <npm_install_dir>\node_modules\myscript.js
 	```
 
-	Therefore, don't run scripts inside the npm install directory or this module will returns always true. No one does that so you can assume that on Windows platform it detects the global module execution correctly. To ensure that this module don't break your code you can put a big warning on your documentation.
+	Therefore, don't run scripts inside the npm install directory or this module will always return true. No one does that so you can assume that on Windows platform it detects the global module execution correctly. To ensure that this module doesn't break your code you can put a big warning in your documentation.
 
 * __Asynchronous__
 
-	The approach consists on reading the `process.mainModule.paths[0]` variable and search for the package.json file, starting in the current path and ending at the `/` root's path. If the first package.json file found contains a bin property then Node.js is running a global module. Works in all situations. If an I/O error is produced while reading the `package.json` file the function will silently return false.
+	The approach consists on reading the `process.mainModule.paths[0]` variable and search for the first package.json file, starting in the current path and ending at the `/` root's path. If the first package.json file contains a `bin` property then Node.js is running a global module. Works in all situations. If an I/O error is produced while reading the package.json file the function will silently return false.
 
 This library provides both versions. The first is typically used when you are in a synchronous context, for example inside a constructor function. On Linux both versions use the same described approach, that is, doesn't perform any I/O call.
 
