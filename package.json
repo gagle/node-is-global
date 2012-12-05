@@ -1,6 +1,6 @@
 {
 	"name": "is-global",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Checks whether Node.js is running a global module.",
 	"keywords": ["global", "module"],
 	"author": {

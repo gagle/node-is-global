@@ -3,8 +3,11 @@
 var PATH = require ("path");
 var FS = require ("fs");
 
+var WIN = process.platform === "win32";
+var SLASH = WIN ? "\\" : "/";
+
 var isGlobalSync = function (){
-	var g = process.platform === "win32"
+	var g = WIN
 			? (function (){
 				var g = false;
 				var paths = process.env.Path.split (";");
@@ -34,14 +37,14 @@ var isGlobalAsync = function (cb){
 		cb (v);
 	};
 	
-	if (process.platform !== "win32"){
+	if (WIN){
 		return ret (process.env._ !== process.execPath);
 	}
 	
 	var getParent = function (path){
-		var index = path.lastIndexOf (PATH.sep);
+		var index = path.lastIndexOf (SLASH);
 		if (index === -1) return null;
-		if (index === 0) return path === PATH.sep ? null : PATH.sep;
+		if (index === 0) return path === SLASH ? null : SLASH;
 		return path.substring (0, index);
 	};
 	
@@ -84,7 +87,7 @@ var isGlobalAsync = function (cb){
 		//Sanity check
 		if (!path) return ret (false);
 		
-		var file = path + PATH.sep + "package.json";
+		var file = path + SLASH + "package.json";
 		FS.exists (prefix + file, function (exists){
 			if (exists){
 				check (file);

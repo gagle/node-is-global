@@ -5,7 +5,7 @@ _Node.js project_
 
 #### Checks whether Node.js is running a global module ####
 
-Version: 0.0.1
+Version: 0.0.2
 
 There are times you need to know whether Node.js is executing a global module, typically when you're writing a third-party module. For these cases this little module can help you.
 
