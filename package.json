@@ -18,5 +18,5 @@
 		"type": "MIT",
 		"url": "http://www.opensource.org/licenses/mit-license.html"
 	}],
-	"main": "is-global"
+	"main": "lib/is-global"
 }
