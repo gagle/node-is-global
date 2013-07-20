@@ -5,30 +5,18 @@ _Node.js project_
 
 #### Checks whether Node.js is running a global module ####
 
-Version: 0.0.2
+Version: 0.1.0
 
-There are times you need to know whether Node.js is executing a global module, typically when you're writing a third-party module. For these cases this little module can help you.
+There are times you need to know whether Node.js is executing a global module, typically when you're writing a third-party module and want to execute different pieces of code depending on the current context; local or global module.
 
-On Linux the `_` environment variable is compared with the `process.execPath`. Simple, quick and works in all situations because it doesn't depend on the current working directory.
+On Windows the `PATH` environment variable is read to check the context. Node.js scripts running inside the npm install directory will always return true, e.g.:
 
-On Windows there are two ways:
+```
+cd C:\Users\<user>\AppData\Roaming\npm
+node app.js
+```
 
-* __Synchronous__
-
-	The `PATH` environment variable is used. Node.js scripts running inside `<npm_install_dir>/node_modules` will always return true, e.g.:
-
-	```
-	npm_install_dir = C:\Users\<user>\AppData\Roaming\npm
-	node <npm_install_dir>\node_modules\myscript.js
-	```
-
-	Therefore, don't run scripts inside the npm install directory or this module will always return true. No one does that so you can assume that on Windows platform it detects the global module execution correctly. To ensure that this module doesn't break your code you can put a big warning in your documentation.
-
-* __Asynchronous__
-
-	The approach consists on reading the `process.mainModule.paths[0]` variable and search for the first package.json file, starting in the current path and ending at the `/` root's path. If the first package.json file contains a `bin` property then Node.js is running a global module. Works in all situations. If an I/O error is produced while reading the package.json file the function will silently return false.
-
-This library provides both versions. The first is typically used when you are in a synchronous context, for example inside a constructor function. On Linux both versions use the same described approach, that is, doesn't perform any I/O call.
+Therefore, don't run scripts inside the npm install directory. No one does that so you can assume that on Windows platform it detects the global module execution correctly.
 
 #### Installation ####
 
@@ -36,15 +24,12 @@ This library provides both versions. The first is typically used when you are in
 npm install is-global
 ```
 
-#### Example ####
+#### Functions ####
 
-```javascript
-var isGlobal = require ("is-global");
-//The result is cached, you don't need to save the result in your application
+- [isGlobal() : Boolean](#isGlobal)
 
-//Synchronous version
-console.log (isGlobal ());
+---
 
-//Asynchronous version
-isGlobal (console.log);
-```
+<a name="isGlobal"></a>
+__isGlobal() : Boolean__  
+Returns true if Node.js is executing a global module, otherwise false.
