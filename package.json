@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/Gagle/node-is-global.git"
+		"url": "git://github.com/gagle/node-is-global.git"
 	},
 	"engines": {
 		"node": ">=0.10"
