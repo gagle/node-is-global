@@ -31,5 +31,6 @@ npm install is-global
 ---
 
 <a name="isGlobal"></a>
-__isGlobal() : Boolean__  
+__isGlobal() : Boolean__
+
 Returns true if Node.js is executing a global module, otherwise false.
