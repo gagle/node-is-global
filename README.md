@@ -5,7 +5,7 @@ _Node.js project_
 
 #### Checks whether Node.js is running a global module ####
 
-Version: 0.1.0
+[![NPM version](https://badge.fury.io/js/is-global.png)](http://badge.fury.io/js/is-global "Fury Version Badge")
 
 There are times that you need to know whether Node.js is executing a global module, typically when you're writing a third-party module and want to execute different pieces of code depending on the current context; local or global module.
 
