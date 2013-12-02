@@ -5,7 +5,7 @@ is-global
 
 [![NPM version](https://badge.fury.io/js/is-global.png)](http://badge.fury.io/js/is-global "Fury Version Badge")
 
-[![NPM installation](https://nodei.co/npm/brainless.png?mini=true)](https://nodei.co/npm/brainless "NodeICO Badge")
+[![NPM installation](https://nodei.co/npm/is-global.png?mini=true)](https://nodei.co/npm/is-global "NodeICO Badge")
 
 There are times that you need to know whether Node.js is executing a global module, typically when you're writing a third-party module and want to execute different pieces of code depending on the current context; local or global module.
 
