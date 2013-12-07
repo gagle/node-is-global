@@ -1,9 +1,9 @@
 v0.1.0 (20 Jul 2013)
-	Complete refactor.
-	Removed asynchronous version.
+  Complete refactor.
+  Removed asynchronous version.
 
 v0.0.2 (5 Dec 2012)
-	path.sep replaced by manual slash.
+  path.sep replaced by manual slash.
 
 v0.0.1 (4 Dec 2012)
-	First release.
+  First release.
